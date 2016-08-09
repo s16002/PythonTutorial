@@ -2,7 +2,6 @@ HANDS = ('グー', 'チョキ', 'パー')
 RESULTS = ('勝ち!', '負け!', '引き分け!')
 
 
-
 def selectHand():
     import random
     y = random.randint(0, 2)
@@ -31,7 +30,7 @@ def saveScore(e):
 
 
 def issue(g):
-    if g ==1:
+    if g == 1:
         return 0
     elif g == -1:
         return 1
@@ -41,27 +40,26 @@ def issue(g):
 
 def past():
     k = open('won.txt', 'rb+')
-    u = k.seek(0,2)
+    u = k.seek(0, 2)
     print("勝ち：", u, "回", '  ', end='')
     k.close()
 
     k = open('lost.txt', 'rb+')
     u = k.seek(0, 2)
-    print("負け:", u, "回",'  ', end='')
+    print("負け:", u, "回", '  ', end='')
     k.close()
 
-
     k = open('draw.txt', 'rb+')
-    u = k.seek(0,2)
+    u = k.seek(0, 2)
     print("引き分け:", u, "回")
 
 
 def score():
-    m = open('score.text','w')
+    m = open('score.text', 'w')
     m.write('')
     m.close()
     m = open('won.txt', 'rb+')
-    v = m.seek(0,2)
+    v = m.seek(0, 2)
     q = repr(v)
     m.close()
     m = open('score.text', 'a')
@@ -91,9 +89,6 @@ def score():
     m.write("回")
 
 
-
-
-
 if __name__ == '__main__':
     x = int(input('グー(0),チョキ(1),パー(2):'))
     a = selectHand()
@@ -102,14 +97,9 @@ if __name__ == '__main__':
     g = issue(result)
     score()
 
-
-
     print("computer:", HANDS[a])
     print("player:", HANDS[x])
     print()
     print('          ', RESULTS[g])
     print()
     past()
-
-
-

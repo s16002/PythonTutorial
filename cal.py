@@ -18,7 +18,7 @@ def cal(year, month=1, day=1):
         _month = month + 1
 
     aa = int(_year * 365.25)
-    bb = int(_month*30.6)
+    bb = int(_month * 30.6)
     cc = _year // 400
     dd = _year // 100
 
@@ -37,23 +37,23 @@ def is_leap_year(year):
         return True
     return False
 
-y = int(input('西暦（４行）を入れてください:'))
 
+y = int(input('西暦（４行）を入れてください:'))
 
 leap = is_leap_year(y)
 for m in range(1, 12 + 1):
-    print(m , '月')
+    print(m, '月')
     print("Sun Mon Tue Wed Thu Fri Sat")
     first = cal(y, m)
     w = first
     for d in range(1, 31 + 1):
         if m == 2 and (not leap and d > 28 or leap and d > 29):
-                break
+            break
         elif m in (4, 6, 9, 11) and d > 30:
             break
 
         if d == 1:
-            print('    ' * first, end ='')
+            print('    ' * first, end='')
         print(' ' * (1 - d // 10), d, end=' ')
         w += 1
         if w > 6:

@@ -7,7 +7,7 @@ def selectHand():
     return b
 
 
-def judgement( x, a):
+def judgement(x, a):
     if x == a:
         return 0
     elif (x == 0 and a == 1) or (x == 1 and a == 2) or (x == 2 and a == 0):
